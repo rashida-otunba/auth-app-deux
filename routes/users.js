@@ -47,7 +47,8 @@ router.post("/login", async (req, res) => {
         { expiresIn: "1h" }
       );
       res.cookie("token", token);
-      res.redirect("/profile");
+      // res.redirect("/profile");
+      res.redirect(`/profile/${user.id}`);
     } else {
       res.send("wrong password ");
     }
